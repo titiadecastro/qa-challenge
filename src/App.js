@@ -65,15 +65,15 @@ const App = () => {
               }
             </div>
             :
-            <div>
-              <h1>Search for a movie</h1>
+            <div className='search-container'>
+              <h1 className='title'>Search for a movie</h1>
               <input type='text' placeholder='Movie Title' value={search} onChange={e => setSearch(e.target.value)} />
               <button onClick={getMovie}>Search</button>
               {
                 movie.Title &&
                 <div>
                   <img src={movie.Poster ?? 'https://via.placeholder.com/300x450'} />
-                  <p>{movie.Title} ({movie.Year})</p>
+                  <p className='movie-title'>{movie.Title} ({movie.Year})</p>
                   <p>{movie.Plot}</p>
                   <p>Runtime: {movie.Runtime}</p>
                   <p>Director: {movie.Director}</p>
