@@ -56,7 +56,7 @@ const App = () => {
               {
                 movie.Title &&
                 <div className='movie-details'>
-                  <img src='https://via.placeholder.com/300x450' alt="" />
+                  <img src={movie.Poster ?? 'https://via.placeholder.com/300x450'} />
                   <p className='movie-title'>Title (Year)</p>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus massa diam, laoreet ac euismod eget, faucibus semper ligula. Praesent sed lacus ac tortor euismod varius. Vivamus sed diam libero. Duis.</p>
                   <p>Runtime:</p>
