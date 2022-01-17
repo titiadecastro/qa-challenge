@@ -44,48 +44,46 @@ const App = () => {
   }
 
   return (
-    <div>
-      <div className='container'>
-        {
-          isLoading ? <div>Loading...</div> :
+    <div className='container'>
+      {
+        isLoading ? <div>Loading...</div> :
+        <div>
           <div>
-            <div>
-              <p onClick={() => setMode('lyrics')}>Lyrics</p>
-              <p onClick={() => setMode('movies')}>Movies</p>
-            </div>
-            {
-              mode === 'lyrics' ?
-              <>
-                <h1>Search for the lyrics to any song</h1>
-                <input type='text' placeholder='Taylor Swift' value={artist} onChange={e => setArtist(e.target.value)} />
-                <input type='text' placeholder='All Too Well' value={title} onChange={e => setTitle(e.target.value)} />
-                <button onClick={getLyrics}>Search</button>
-                {
-                  lyrics &&
-                  <p style={{'whiteSpace': 'pre'}}>{lyrics}</p>
-                }
-              </>
-              :
-              <>
-                <h1>Search for a movie</h1>
-                <input type='text' placeholder='Movie Title' value={search} onChange={e => setSearch(e.target.value)} />
-                <button onClick={getMovie}>Search</button>
-                {
-                  movie.Title &&
-                  <div>
-                    <img src={movie.Poster ?? 'https://via.placeholder.com/300x450'} />
-                    <p>{movie.Title} ({movie.Year})</p>
-                    <p>{movie.Plot}</p>
-                    <p>Runtime: {movie.Runtime}</p>
-                    <p>Director: {movie.Director}</p>
-                    <p>Stars: {movie.Actors}</p>
-                  </div>
-                }
-              </>
-            }
+            <p onClick={() => setMode('lyrics')}>Lyrics</p>
+            <p onClick={() => setMode('movies')}>Movies</p>
           </div>
-        }
-      </div>
+          {
+            mode === 'lyrics' ?
+            <>
+              <h1>Search for the lyrics to any song</h1>
+              <input type='text' placeholder='Taylor Swift' value={artist} onChange={e => setArtist(e.target.value)} />
+              <input type='text' placeholder='All Too Well' value={title} onChange={e => setTitle(e.target.value)} />
+              <button onClick={getLyrics}>Search</button>
+              {
+                lyrics &&
+                <p style={{'whiteSpace': 'pre'}}>{lyrics}</p>
+              }
+            </>
+            :
+            <>
+              <h1>Search for a movie</h1>
+              <input type='text' placeholder='Movie Title' value={search} onChange={e => setSearch(e.target.value)} />
+              <button onClick={getMovie}>Search</button>
+              {
+                movie.Title &&
+                <div>
+                  <img src={movie.Poster ?? 'https://via.placeholder.com/300x450'} />
+                  <p>{movie.Title} ({movie.Year})</p>
+                  <p>{movie.Plot}</p>
+                  <p>Runtime: {movie.Runtime}</p>
+                  <p>Director: {movie.Director}</p>
+                  <p>Stars: {movie.Actors}</p>
+                </div>
+              }
+            </>
+          }
+        </div>
+      }
     </div>
   )
 }
