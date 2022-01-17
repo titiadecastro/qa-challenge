@@ -54,7 +54,7 @@ const App = () => {
           </div>
           {
             mode === 'lyrics' ?
-            <>
+            <div>
               <h1>Search for the lyrics to any song</h1>
               <input type='text' placeholder='Taylor Swift' value={artist} onChange={e => setArtist(e.target.value)} />
               <input type='text' placeholder='All Too Well' value={title} onChange={e => setTitle(e.target.value)} />
@@ -63,9 +63,9 @@ const App = () => {
                 lyrics &&
                 <p style={{'whiteSpace': 'pre'}}>{lyrics}</p>
               }
-            </>
+            </div>
             :
-            <>
+            <div>
               <h1>Search for a movie</h1>
               <input type='text' placeholder='Movie Title' value={search} onChange={e => setSearch(e.target.value)} />
               <button onClick={getMovie}>Search</button>
@@ -80,7 +80,7 @@ const App = () => {
                   <p>Stars: {movie.Actors}</p>
                 </div>
               }
-            </>
+            </div>
           }
         </div>
       }
