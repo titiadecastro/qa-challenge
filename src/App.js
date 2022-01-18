@@ -54,7 +54,7 @@ const App = () => {
               <input type='text' placeholder='Movie Title' />
               <button className='search'>Search</button>
               {
-                movie.Title &&
+                // movie.Title &&
                 <div className='movie-details'>
                   <img src={movie.Poster ?? 'https://via.placeholder.com/300x450'} />
                   <p className='movie-title'>{movie.Title} ({movie.Year})</p>
