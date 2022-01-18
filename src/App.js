@@ -31,7 +31,7 @@ const App = () => {
     setIsLoading(true)
     try {
       const movieData = await axios({
-        url: `http://www.omdbapi.com?t=${search}`,
+        url: `http://www.omdbapi.com?t=${search}&apikey=abc123`,
         method: 'get'
       })
       console.log(movieData.data)
